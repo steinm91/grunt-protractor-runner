@@ -86,7 +86,8 @@ If false, protractor will give colored output, as it does by default.
 Type: `Boolean`
 Default value: `false`
 
-If true, grunt will pass 'debug' as second argument to protractor CLI to enable node CLI debugging as described in [Protractor Debugging documentation](https://github.com/angular/protractor/blob/master/docs/debugging.md).
+If true, grunt will pass debugger options to protractor CLI to enable node CLI debugging as described in [Protractor Debugging documentation](https://github.com/angular/protractor/blob/master/docs/debugging.md).
+For node >= 8 '--inspect' is passed. Otherwise 'debug'.
 
 #### options.args
 Type: `Object`
