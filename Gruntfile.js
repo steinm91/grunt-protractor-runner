@@ -51,7 +51,6 @@ module.exports = function(grunt) {
       testArgs1: {
         configFile:"test/testConf.js",
         options: {
-          debug: true,
           args: {
             params: {
               number: 1,
