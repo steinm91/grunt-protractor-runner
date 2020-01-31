@@ -13,6 +13,7 @@ var path = require('path');
 var fs = require('fs');
 var split = require('split');
 var through2 = require('through2');
+var semver = require('semver');
 
 module.exports = function(grunt) {
 
@@ -59,7 +60,11 @@ module.exports = function(grunt) {
       args.push('--no-jasmineNodeOpts.showColors');
     }
     if (!grunt.util._.isUndefined(opts.debug) && opts.debug === true){
-      args.splice(1,0,'debug');
+      if(semver.gte(process.versions.node, '8.0.0')){
+        args.unshift('--inspect');
+      }else{
+        args.splice(1,0,'debug');
+      }
     }
 
     // Iterate over all supported arguments.
