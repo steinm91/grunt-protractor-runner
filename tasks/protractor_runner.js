@@ -61,7 +61,7 @@ module.exports = function(grunt) {
     }
     if (!grunt.util._.isUndefined(opts.debug) && opts.debug === true){
       if(semver.gte(process.versions.node, '8.0.0')){
-        args.unshift('--inspect');
+        args.unshift('--inspect-brk');
       }else{
         args.splice(1,0,'debug');
       }
